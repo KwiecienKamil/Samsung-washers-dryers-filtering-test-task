@@ -1,0 +1,57 @@
+:root {
+  --primary: #ffffff;
+  --secondary: #f8f8f8;
+  --accent: #142ba0;
+  --dark: #1c1c1c;
+  font-family: "SamsungOne", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#wrapper {
+  background-color: var(--secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#heading {
+  width: 100%;
+  background-color: var(--primary);
+  text-align: center;
+  padding: 1rem 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+main {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+#search-section {
+  margin: 1rem 0 1rem 0;
+  text-align: center;
+}
+
+#search-section #search-section-input {
+  background-color: var(--primary);
+  border: none;
+  min-width: 15rem;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+}
+
+#filters-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,70 @@
+Tytuł - 
+Pojemnosc - 
+Wymiary - 
+Funkcje - 
+Klasa Energetyczna - 
+Cena obowiązuje - 15.09.2022 - 21.09.2022 
+Cena - 3199
+Raty - 53,31 zł x 60 rat
+
+Tytuł - WW90T754ABT, Pralka QuickDrive™, 9 kg, biała
+Pojemnosc - 9
+Wymiary - 55 x 60 x 85
+Funkcje - Drzwi AddWash™, Panel AI Control, Silnik inwerterowy, Wyświetlacz elektroniczny
+Klasa Energetyczna - A
+Cena obowiązuje - 15.09.2022 - 21.09.2022
+Cena - 3199
+Raty - 53,31 zł x 60 rat
+
+Tytuł - WW10T654DLH, Pralka EcoBubble™, 10,5 kg, biała
+Pojemność (kg): 10,5
+Wymiary (GxSxW): 55 x 60 x 85 cm
+Funkcje: Drzwi AddWash™, Panel AI Control, Silnik inwerterowy, Wyświetlacz elektroniczny 
+Klasa Energetyczna - B
+Cena obowiązuje - 15.09.2022 - 21.09.2022 
+Cena - 3199
+Raty - 53,31 zł x 60 rat
+
+
+Tytuł - WW90T654DLH, Pralka EcoBubble™,
+ 9 kg, biała
+Pojemność (kg): 8
+Wymiary (GxSxW): 55 x 60 x 85 cm
+Funkcje: Drzwi AddWash™, Panel AI Control, Silnik inwerterowy, Wyświetlacz elektroniczny
+Klasa Energetyczna - C
+Cena obowiązuje - 15.09.2022 - 21.09.2022 
+Cena - 3199
+Raty - 53,31 zł x 60 rat
+
+
+Tytuł - WW90T754ABT, Pralka QuickDrive™, 9 kg, biała
+Pojemność (kg): 9
+Wymiary (GxSxW): 55 x 60 x 85 cm
+Funkcje: Drzwi AddWash™, Panel AI Control, Silnik inwerterowy, Wyświetlacz elektroniczny
+Klasa Energetyczna - D
+Cena obowiązuje - 15.09.2022 - 21.09.2022 
+Cena - 3199
+Raty - 53,31 zł x 60 rat
+
+
+Tytuł - WW10T654DLH, Pralka EcoBubble™, 10,5 kg, biała
+Pojemność (kg): 10,5
+Wymiary (GxSxW): 55 x 60 x 85 cm
+Funkcje: Drzwi AddWash™, Panel AI Control, Silnik inwerterowy, Wyświetlacz elektroniczny 
+Klasa Energetyczna - E
+Cena obowiązuje - 15.09.2022 - 21.09.2022 
+Cena - 3199
+Raty - 53,31 zł x 60 rat
+
+
+Tytuł - WW90T654DLH, Pralka EcoBubble™,
+ 8 kg, biała
+Pojemność (kg): 8
+Wymiary (GxSxW): 55 x 60 x 85 cm
+Funkcje: Drzwi AddWash™, Panel AI Control, Silnik inwerterowy, Wyświetlacz elektroniczny 
+Klasa Energetyczna - F
+Cena obowiązuje - 15.09.2022 - 21.09.2022 
+Cena - 3199
+Raty - 53,31 zł x 60 rat
+
+
