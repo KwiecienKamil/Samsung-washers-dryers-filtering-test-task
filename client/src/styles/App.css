@@ -52,6 +52,61 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
   flex-wrap: wrap;
   font-size: 0.9rem;
+}
+.filter-component {
+  flex: 1;
+}
+
+.dropdown-component {
+  background-color: var(--primary);
+  margin: 0.5rem 0 0.5rem 0;
+  position: relative;
+}
+
+.dropdown-filter-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary);
+  border: none;
+  padding: 1rem 0.5rem 1rem 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 1rem;
+}
+.dropdown-filter-button:hover {
+  background-color: #e9e5e5;
+}
+
+.dropdown-content {
+  position: absolute;
+  width: 100%;
+  background-color: var(--primary);
+  padding: 0rem 0.5rem 0rem 0.5rem;
+  transition: 0.3s;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.dropdown-content p {
+  padding: 0.5rem 0.2rem 0.5rem 0.2rem;
+  font-size: 1rem;
+}
+.dropdown-content p:hover {
+  background-color: #e9e5e5;
+}
+
+#products-wrapper {
+  background-color: var(--primary);
+  display: grid;
+  grid-template-columns: 4;
+  margin-top: 1rem;
+}
+
+.product-card img {
+  max-width: 400px;
 }

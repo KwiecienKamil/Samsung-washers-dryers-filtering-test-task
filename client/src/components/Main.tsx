@@ -1,4 +1,5 @@
 import FiltersSection from "./FiltersSection";
+import Products from "./Products";
 import SearchSection from "./SearchSection";
 
 const Main = () => {
@@ -6,6 +7,7 @@ const Main = () => {
     <main>
       <SearchSection />
       <FiltersSection />
+      <Products />
     </main>
   );
 };
