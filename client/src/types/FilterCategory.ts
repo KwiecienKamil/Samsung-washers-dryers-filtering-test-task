@@ -1,4 +1,5 @@
 export type FilterCategoryProps = {
+  category: string;
   title: string;
   dropdownFilterTitle: string;
   dropdownFilterType: string[];
@@ -11,6 +12,11 @@ export type FilterDropdownProps = {
 
 export type DropdownContentProps = {
   dropdownFilterType: string[];
+  category: string;
+};
+
+export type ProductCategoryprops = {
+  category: string;
 };
 
 export type ToggleDropdownMenuProps = {
@@ -55,7 +61,7 @@ export type DisplayedProductsSetStateProps = {
 };
 
 export type DisplayedProductsSetStateVoidProps = {
-  setAllDisplayedProducts: (filterType: string) => void;
+  setAllDisplayedProducts: (filterType: string, category: string) => void;
   activeFilters: string[];
 };
 

@@ -18,6 +18,7 @@ const FiltersSection = ({
         {filterCategories.map((category: FilterCategoryProps, index) => (
           <FilterComponent
             key={index}
+            category={category.category}
             title={category.title}
             dropdownFilterTitle={category.dropdownFilterTitle}
             dropdownFilterType={category.dropdownFilterType}

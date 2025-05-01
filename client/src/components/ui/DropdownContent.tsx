@@ -5,12 +5,13 @@ import {
 
 const DropdownContent: React.FC<
   DropdownContentProps & SetCurrentFilterProps
-> = ({ dropdownFilterType, setCurrentFilter, activeFilters }) => {
+> = ({ dropdownFilterType, setCurrentFilter, activeFilters, category }) => {
   return (
     <div className="dropdown-content">
       {dropdownFilterType.map((item) => (
         <p
-          onClick={() => setCurrentFilter(item)}
+          key={item}
+          onClick={() => setCurrentFilter(item, category)}
           className={
             activeFilters.includes(item)
               ? "active-filter-element"

@@ -1,6 +1,7 @@
 import {
   DisplayedProductsSetStateVoidProps,
   FilterDropdownProps,
+  ProductCategoryprops,
 } from "../types/FilterCategory";
 import DropdownButton from "./ui/DropdownButton";
 import DropdownContent from "./ui/DropdownContent";
@@ -15,13 +16,16 @@ const DropdownComponent = ({
   toggleDropdownMenu,
   setAllDisplayedProducts,
   activeFilters,
+  category,
   setToggleDropdownMenu,
-}: DropdownComponentProps & DisplayedProductsSetStateVoidProps) => {
+}: DropdownComponentProps &
+  DisplayedProductsSetStateVoidProps &
+  ProductCategoryprops) => {
   const [currentFilter, setCurrentFilter] = useState("");
 
   const handleFilterChange = (item: string) => {
     setCurrentFilter(item);
-    setAllDisplayedProducts(item);
+    setAllDisplayedProducts(item, category);
   };
   return (
     <div className="dropdown-component">
@@ -35,6 +39,7 @@ const DropdownComponent = ({
           dropdownFilterType={dropdownFilterType}
           setCurrentFilter={handleFilterChange}
           activeFilters={activeFilters}
+          category={category}
         />
       )}
     </div>

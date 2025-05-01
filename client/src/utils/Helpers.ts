@@ -11,11 +11,13 @@ import classF from "../assets/F.png";
 
 export const filterCategories: FilterCategoryProps[] = [
   {
+    category: "sorting",
     title: "Sortuj po:",
     dropdownFilterTitle: "Popularność",
     dropdownFilterType: ["Wszystkie", "Cena", "Pojemność"],
   },
   {
+    category: "functions",
     title: "Funkcje:",
     dropdownFilterTitle: "Pokaż wszystkie",
     dropdownFilterType: [
@@ -27,14 +29,16 @@ export const filterCategories: FilterCategoryProps[] = [
     ],
   },
   {
+    category: "energy",
     title: "Klasa energetyczna:",
     dropdownFilterTitle: "Pokaż wszystkie",
     dropdownFilterType: ["Wszystkie", "A", "B", "C", "D"],
   },
   {
+    category: "capacity",
     title: "Pojemność:",
     dropdownFilterTitle: "Pokaż wszystkie",
-    dropdownFilterType: ["Wszystkie", "9kg", "8kg", "10.5kg"],
+    dropdownFilterType: ["Wszystkie", "8kg", "9kg", "10.5kg"],
   },
 ];
 
