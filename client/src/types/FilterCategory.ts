@@ -24,8 +24,60 @@ export type ProductCardProps = {
   capacity: string;
   dimentions: string;
   functions: string;
-  energyClass: string;
+  energyClassImg: string;
   timePeriod: string;
   price: string;
   installments: string;
+};
+
+export type SetCurrentFilterProps = {
+  setCurrentFilter: any;
+  activeFilters: string[];
+};
+
+export type ProductInfoTextProps = {
+  name: string;
+  value: string;
+};
+
+export type EnergyClassComponentProps = {
+  energyClassImg: string;
+};
+
+export type DisplayedProductsStateProps = {
+  allDisplayedProducts: ProductCardProps[];
+};
+
+export type DisplayedProductsSetStateProps = {
+  setAllDisplayedProducts: React.Dispatch<
+    React.SetStateAction<ProductCardProps[]>
+  >;
+};
+
+export type DisplayedProductsSetStateVoidProps = {
+  setAllDisplayedProducts: (filterType: string) => void;
+  activeFilters: string[];
+};
+
+export type DisplayedProductsStateManagementAppProps = {
+  allDisplayedProducts: ProductCardProps[];
+  setAllDisplayedProducts: React.Dispatch<
+    React.SetStateAction<ProductCardProps[]>
+  >;
+};
+
+export type HandleFilterChangeProps = {
+  allDisplayedProducts: ProductCardProps[];
+  handleFilters: (updatedFilters?: {
+    functions: string[];
+    capacity: string;
+    energyClass: string;
+    priceRange: [number, number];
+  }) => void;
+  filters: {
+    functions: string[];
+    capacity: string;
+    energyClass: string;
+    priceRange: [number, number];
+  };
 };

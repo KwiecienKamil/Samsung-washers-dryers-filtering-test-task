@@ -1,21 +1,32 @@
 import { filterCategories } from "../utils/Helpers";
-import { FilterCategoryProps } from "../types/FilterCategory";
+import {
+  DisplayedProductsSetStateVoidProps,
+  DisplayedProductsStateProps,
+  FilterCategoryProps,
+} from "../types/FilterCategory";
 import FilterComponent from "./FilterComponent";
 import ProductCounter from "./ProductCounter";
 
-const FiltersSection = () => {
+const FiltersSection = ({
+  allDisplayedProducts,
+  setAllDisplayedProducts,
+  activeFilters,
+}: DisplayedProductsStateProps & DisplayedProductsSetStateVoidProps) => {
   return (
     <>
       <section id="filters-section">
-        {filterCategories.map((category: FilterCategoryProps) => (
+        {filterCategories.map((category: FilterCategoryProps, index) => (
           <FilterComponent
+            key={index}
             title={category.title}
             dropdownFilterTitle={category.dropdownFilterTitle}
             dropdownFilterType={category.dropdownFilterType}
+            setAllDisplayedProducts={setAllDisplayedProducts}
+            activeFilters={activeFilters}
           />
         ))}
       </section>
-      <ProductCounter />
+      <ProductCounter allDisplayedProducts={allDisplayedProducts} />
     </>
   );
 };

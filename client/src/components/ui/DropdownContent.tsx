@@ -1,12 +1,24 @@
-import { DropdownContentProps } from "../../types/FilterCategory";
+import {
+  DropdownContentProps,
+  SetCurrentFilterProps,
+} from "../../types/FilterCategory";
 
-const DropdownContent: React.FC<DropdownContentProps> = ({
-  dropdownFilterType,
-}) => {
+const DropdownContent: React.FC<
+  DropdownContentProps & SetCurrentFilterProps
+> = ({ dropdownFilterType, setCurrentFilter, activeFilters }) => {
   return (
     <div className="dropdown-content">
       {dropdownFilterType.map((item) => (
-        <p>{item}</p>
+        <p
+          onClick={() => setCurrentFilter(item)}
+          className={
+            activeFilters.includes(item)
+              ? "active-filter-element"
+              : "filter-element"
+          }
+        >
+          {item}
+        </p>
       ))}
     </div>
   );

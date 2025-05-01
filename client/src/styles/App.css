@@ -3,6 +3,8 @@
   --secondary: #f8f8f8;
   --accent: #142ba0;
   --dark: #1c1c1c;
+  --grayish: #767676;
+  --hover: #e9e5e5;
   font-family: "SamsungOne", sans-serif;
 }
 
@@ -45,7 +47,7 @@ main {
   border: none;
   min-width: 15rem;
   padding: 0.5rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 #filters-section {
@@ -61,8 +63,7 @@ main {
 }
 
 .dropdown-component {
-  background-color: var(--primary);
-  margin: 0.5rem 0 0.5rem 0;
+  margin: 1rem 0 0 0;
   position: relative;
 }
 
@@ -77,36 +78,101 @@ main {
   font-size: 1rem;
   cursor: pointer;
   transition: 0.3s;
-  border-radius: 1rem;
 }
 .dropdown-filter-button:hover {
-  background-color: #e9e5e5;
+  background-color: var(--hover);
 }
 
 .dropdown-content {
   position: absolute;
   width: 100%;
   background-color: var(--primary);
-  padding: 0rem 0.5rem 0rem 0.5rem;
-  transition: 0.3s;
   cursor: pointer;
   font-size: 0.9rem;
+  margin-top: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 }
 .dropdown-content p {
-  padding: 0.5rem 0.2rem 0.5rem 0.2rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  transition: 0.2s;
   font-size: 1rem;
 }
 .dropdown-content p:hover {
-  background-color: #e9e5e5;
+  background-color: var(--hover);
 }
 
 #products-wrapper {
-  background-color: var(--primary);
+  background-color: var(--secondary);
   display: grid;
-  grid-template-columns: 4;
-  margin-top: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1rem 0 1rem 0;
+}
+.product-card {
+  background-color: var(--primary);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.product-card h3 {
+  font-size: 1.4rem;
+  padding-right: 1rem;
 }
 
+.product-card-specifications {
+  margin-top: 2rem;
+}
 .product-card img {
-  max-width: 400px;
+  max-width: 300px;
+}
+
+.product-card-specifications-name {
+  color: var(--grayish);
+}
+
+.product-card-specifications-value {
+  color: var(--dark);
+  font-weight: 700;
+  padding-left: 0.2rem;
+}
+
+#product-card-specifications-installments {
+  font-size: 1.2rem;
+  color: #555555;
+  font-weight: 700;
+}
+.price-display-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(dark);
+  font-size: 2.5rem;
+}
+
+.price-display-remainder {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+#product-counter {
+  margin-top: 1rem;
+}
+.energy-class-component {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #555555;
+  margin: 1rem 0 1rem 0;
+}
+.energy-class-component img {
+  width: 50px;
+}
+
+.active-filter-element {
+  background-color: var(--hover);
 }

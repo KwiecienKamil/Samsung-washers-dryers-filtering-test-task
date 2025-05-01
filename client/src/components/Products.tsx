@@ -1,17 +1,18 @@
-import { ProductsInfo } from "../utils/Helpers";
+import { DisplayedProductsStateProps } from "../types/FilterCategory";
 import ProductCard from "./ui/ProductCard";
 
-const Products = () => {
+const Products = ({ allDisplayedProducts }: DisplayedProductsStateProps) => {
   return (
     <section id="products-wrapper">
-      {ProductsInfo.map((productInfo) => (
+      {allDisplayedProducts.map((productInfo, index) => (
         <ProductCard
+          key={index}
           title={productInfo.title}
           image={productInfo.image}
           capacity={productInfo.capacity}
           dimentions={productInfo.dimentions}
           functions={productInfo.functions}
-          energyClass={productInfo.energyClass}
+          energyClassImg={productInfo.energyClassImg}
           timePeriod={productInfo.timePeriod}
           price={productInfo.price}
           installments={productInfo.installments}

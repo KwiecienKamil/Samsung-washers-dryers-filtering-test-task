@@ -1,7 +1,11 @@
-const ProductCounter = () => {
+import { DisplayedProductsStateProps } from "../types/FilterCategory";
+
+const ProductCounter = ({
+  allDisplayedProducts,
+}: DisplayedProductsStateProps) => {
   return (
     <div id="product-counter">
-      <p>Liczba wyników: 99</p>
+      <p>Liczba wyników: {allDisplayedProducts.length}</p>
     </div>
   );
 };

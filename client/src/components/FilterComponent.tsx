@@ -1,11 +1,16 @@
 import { useState } from "react";
-import { FilterCategoryProps } from "../types/FilterCategory";
+import {
+  DisplayedProductsSetStateVoidProps,
+  FilterCategoryProps,
+} from "../types/FilterCategory";
 import DropdownComponent from "./DropdownComponent";
 const FilterComponent = ({
   title,
   dropdownFilterTitle,
   dropdownFilterType,
-}: FilterCategoryProps) => {
+  activeFilters,
+  setAllDisplayedProducts,
+}: FilterCategoryProps & DisplayedProductsSetStateVoidProps) => {
   const [toggleDropdownMenu, setToggleDropdownMenu] = useState<boolean>(false);
 
   const handleToggleMenu = () => {
@@ -20,6 +25,8 @@ const FilterComponent = ({
         dropdownFilterType={dropdownFilterType}
         toggleDropdownMenu={toggleDropdownMenu}
         setToggleDropdownMenu={handleToggleMenu}
+        setAllDisplayedProducts={setAllDisplayedProducts}
+        activeFilters={activeFilters}
       />
     </div>
   );
