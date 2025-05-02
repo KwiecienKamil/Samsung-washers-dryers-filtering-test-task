@@ -1,64 +1,65 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import "./styles/App.css";
-import { filterCategories, ProductsInfo } from "./utils/Helpers";
+import { filterCategories } from "./utils/Helpers";
+import axios from "axios";
+import { ProductProps } from "./types/FilterCategory";
 
 function App() {
-  const [allDisplayedProducts, setAllDisplayedProducts] =
-    useState(ProductsInfo);
+  const [allProducts, setAllProducts] = useState<ProductProps[]>([]);
+  const [allDisplayedProducts, setAllDisplayedProducts] = useState<
+    ProductProps[]
+  >([]);
   const [activeFilters, setActiveFilters] = useState<string[]>([]);
+  const [searchValue, setSearchValue] = useState("");
 
-  const filterProducts = (filterType: string, categoryKey: string) => {
-    let updatedFilters: string[];
+  const handleSearch = (value: string) => {
+    setSearchValue(value);
+  };
 
-    if (filterType === "Wszystkie" && categoryKey) {
-      const category = filterCategories.find(
-        (filterCategory) => filterCategory.category === categoryKey
-      );
-      const optionsToRemove =
-        category?.dropdownFilterType.filter(
-          (filterType) => filterType !== "Wszystkie"
-        ) || [];
-      updatedFilters = activeFilters.filter(
-        (activeFilter) => !optionsToRemove.includes(activeFilter)
-      );
-    } else {
-      if (activeFilters.includes(filterType)) {
-        updatedFilters = activeFilters.filter(
-          (activeFilter) => activeFilter !== filterType
-        );
-      } else {
-        updatedFilters = [...activeFilters, filterType];
-      }
-    }
-    setActiveFilters(updatedFilters);
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_API_URL}/getProducts`)
+      .then((response) => {
+        setAllProducts(response.data);
+        setAllDisplayedProducts(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log("Failed: ", error);
+      });
+  }, []);
 
-    const sortByPrice = updatedFilters.includes("Cena");
-    const sortByCapacity = updatedFilters.includes("Pojemność");
+  useEffect(() => {
+    applyAllFilters(activeFilters, searchValue);
+  }, [activeFilters, searchValue, allProducts]);
 
-    const functionFilters = updatedFilters.filter((filterCategory) =>
+  const applyAllFilters = (allFilters: string[], search: string) => {
+    const sortByPrice = allFilters.includes("Cena");
+    const sortByCapacity = allFilters.includes("Pojemność");
+
+    const functionFilters = allFilters.filter((filterCategory) =>
       filterCategories
-        .find((filterCategory) => filterCategory.category === "functions")
+        .find((fc) => fc.category === "functions")
         ?.dropdownFilterType.includes(filterCategory)
     );
 
-    const energyClassFilters = updatedFilters.filter((filterCategory) =>
+    const energyClassFilters = allFilters.filter((filterCategory) =>
       filterCategories
-        .find((filterCategory) => filterCategory.category === "energy")
+        .find((fc) => fc.category === "energy")
         ?.dropdownFilterType.includes(filterCategory)
     );
 
-    const capacityFilters = updatedFilters.filter((filterCategory) =>
+    const capacityFilters = allFilters.filter((filterCategory) =>
       filterCategories
-        .find((filterCategory) => filterCategory.category === "capacity")
+        .find((fc) => fc.category === "capacity")
         ?.dropdownFilterType.includes(filterCategory)
     );
 
-    const filtered = ProductsInfo.filter((product) => {
-      const matchesFunctions = functionFilters.every(
-        (matchingFunctionFilters) =>
-          product.functions.includes(matchingFunctionFilters)
+    let filtered = allProducts.filter((product) => {
+      const matchesFunctions = functionFilters.every((func) =>
+        product.functions.includes(func)
       );
       const matchesEnergy =
         energyClassFilters.length === 0 ||
@@ -68,12 +69,43 @@ function App() {
         capacityFilters.includes(product.capacity);
       return matchesFunctions && matchesEnergy && matchesCapacity;
     });
+
     if (sortByPrice) {
       filtered.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
     } else if (sortByCapacity) {
       filtered.sort((a, b) => parseFloat(a.capacity) - parseFloat(b.capacity));
     }
+
+    if (search) {
+      filtered = filtered.filter((product) =>
+        product.title.toLowerCase().includes(search.toLowerCase())
+      );
+    }
+
     setAllDisplayedProducts(filtered);
+  };
+
+  const filterProducts = (filterType: string, categoryKey: string) => {
+    let updatedFilters: string[];
+
+    if (filterType === "Wszystkie" && categoryKey) {
+      const category = filterCategories.find(
+        (fc) => fc.category === categoryKey
+      );
+      const optionsToRemove =
+        category?.dropdownFilterType.filter((f) => f !== "Wszystkie") || [];
+      updatedFilters = activeFilters.filter(
+        (f) => !optionsToRemove.includes(f)
+      );
+    } else {
+      if (activeFilters.includes(filterType)) {
+        updatedFilters = activeFilters.filter((f) => f !== filterType);
+      } else {
+        updatedFilters = [...activeFilters, filterType];
+      }
+    }
+
+    setActiveFilters(updatedFilters);
   };
 
   return (
@@ -83,6 +115,7 @@ function App() {
         allDisplayedProducts={allDisplayedProducts}
         setAllDisplayedProducts={filterProducts}
         activeFilters={activeFilters}
+        setSearchValue={handleSearch}
       />
     </div>
   );

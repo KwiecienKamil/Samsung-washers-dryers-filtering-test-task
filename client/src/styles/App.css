@@ -176,3 +176,34 @@ main {
 .active-filter-element {
   background-color: var(--hover);
 }
+
+.select-product-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.select-product-button {
+  background: var(--accent);
+  color: var(--primary);
+}
+.select-product-button,
+.selected-product-button {
+  padding: 0.7rem 2.5rem 0.7rem 2.5rem;
+  font-size: 1.1rem;
+  border-radius: 2rem;
+  border: none;
+  letter-spacing: 2px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+.select-product-button:hover,
+.selected-product-button:hover {
+  filter: brightness(130%);
+}
+
+.selected-product-button {
+  background: var(--dark);
+  color: var(--primary);
+}

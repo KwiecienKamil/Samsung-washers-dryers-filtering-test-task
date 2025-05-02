@@ -1,3 +1,29 @@
+export interface ProductProps {
+  title: string;
+  image: string;
+  capacity: string;
+  dimentions: string;
+  functions: string;
+  energyClassImg: string;
+  energyClass: string;
+  timePeriod: string;
+  price: string;
+  installments: string;
+}
+
+export interface ProductInfoTextDisplayProps {
+  title: string;
+  image: string;
+  capacity: string;
+  dimentions: string;
+  functions: string;
+  energyClassImg: string;
+  energyClass: string;
+  timePeriod: string;
+  price: string;
+  installments: string;
+}
+
 export type FilterCategoryProps = {
   category: string;
   title: string;
@@ -24,7 +50,7 @@ export type ToggleDropdownMenuProps = {
   setToggleDropdownMenu: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export type ProductCardProps = {
+export interface ProductCardProps {
   title: string;
   image: string;
   capacity: string;
@@ -34,7 +60,7 @@ export type ProductCardProps = {
   timePeriod: string;
   price: string;
   installments: string;
-};
+}
 
 export type SetCurrentFilterProps = {
   setCurrentFilter: any;
@@ -51,7 +77,7 @@ export type EnergyClassComponentProps = {
 };
 
 export type DisplayedProductsStateProps = {
-  allDisplayedProducts: ProductCardProps[];
+  allDisplayedProducts: ProductProps[];
 };
 
 export type DisplayedProductsSetStateProps = {
@@ -86,4 +112,8 @@ export type HandleFilterChangeProps = {
     energyClass: string;
     priceRange: [number, number];
   };
+};
+
+export type SearchSectionProps = {
+  setSearchValue: (value: string) => void;
 };

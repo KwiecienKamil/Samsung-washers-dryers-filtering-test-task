@@ -7,7 +7,10 @@ const EnergyClassComponent: FC<EnergyClassComponentProps> = ({
   return (
     <div className="energy-class-component">
       <p>Klasa energetyczna</p>
-      <img src={energyClassImg} alt="energy class" />
+      <img
+        src={`${import.meta.env.VITE_API_URL}${energyClassImg}`}
+        alt="Energy Class"
+      />
     </div>
   );
 };

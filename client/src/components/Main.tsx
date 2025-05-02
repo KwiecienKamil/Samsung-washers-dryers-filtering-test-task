@@ -1,6 +1,7 @@
 import {
   DisplayedProductsSetStateVoidProps,
   DisplayedProductsStateProps,
+  SearchSectionProps,
 } from "../types/FilterCategory";
 import FiltersSection from "./FiltersSection";
 import Products from "./Products";
@@ -9,11 +10,15 @@ import SearchSection from "./SearchSection";
 const Main = ({
   allDisplayedProducts,
   setAllDisplayedProducts,
+  setSearchValue,
   activeFilters,
-}: DisplayedProductsStateProps & DisplayedProductsSetStateVoidProps) => {
+}: DisplayedProductsStateProps &
+  DisplayedProductsSetStateVoidProps &
+  SearchSectionProps &
+  SearchSectionProps) => {
   return (
     <main>
-      <SearchSection />
+      <SearchSection setSearchValue={setSearchValue} />
       <FiltersSection
         allDisplayedProducts={allDisplayedProducts}
         setAllDisplayedProducts={setAllDisplayedProducts}
