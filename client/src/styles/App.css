@@ -2,6 +2,7 @@
   --primary: #ffffff;
   --secondary: #f8f8f8;
   --accent: #142ba0;
+  --lightaccent: #007aff;
   --dark: #1c1c1c;
   --grayish: #767676;
   --hover: #e9e5e5;
@@ -103,11 +104,42 @@ main {
 
 #products-wrapper {
   background-color: var(--secondary);
+  margin: 1rem 0 1rem 0;
+}
+
+#displayed-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  margin: 1rem 0 1rem 0;
 }
+
+#show-more-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 1rem 0;
+  color: var(--lightaccent);
+  font-weight: 700;
+}
+
+#show-more-section button {
+  background: transparent;
+  border: none;
+  margin-top: 0.2rem;
+  color: var(--lightaccent);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#show-more-section-arrow {
+  padding-top: 0.2rem;
+  margin-left: 0.5rem;
+}
+
+#show-more-section button:hover {
+  filter: brightness(70%);
+}
+
 .product-card {
   background-color: var(--primary);
   padding: 2rem;

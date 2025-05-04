@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { FaArrowDown } from "react-icons/fa";
+import { TiArrowSortedDown } from "react-icons/ti";
 
 const DropdownButton = ({
   dropdownFilterTitle,
@@ -9,7 +8,7 @@ const DropdownButton = ({
   return (
     <button className="dropdown-filter-button" onClick={setToggleDropdownMenu}>
       {currentFilter ? currentFilter : dropdownFilterTitle}
-      <FaArrowDown />
+      <TiArrowSortedDown />
     </button>
   );
 };

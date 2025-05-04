@@ -117,3 +117,8 @@ export type HandleFilterChangeProps = {
 export type SearchSectionProps = {
   setSearchValue: (value: string) => void;
 };
+
+export type ShowMoreButtonProps = {
+  showMoreProducts: () => void;
+  isAllVisible: boolean;
+};

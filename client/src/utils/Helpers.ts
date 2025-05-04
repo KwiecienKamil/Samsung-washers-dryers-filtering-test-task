@@ -23,7 +23,7 @@ export const filterCategories: FilterCategoryProps[] = [
     category: "energy",
     title: "Klasa energetyczna:",
     dropdownFilterTitle: "Pokaż wszystkie",
-    dropdownFilterType: ["Wszystkie", "A", "B", "C", "D"],
+    dropdownFilterType: ["Wszystkie", "A", "B", "C", "D", "E", "F"],
   },
   {
     category: "capacity",

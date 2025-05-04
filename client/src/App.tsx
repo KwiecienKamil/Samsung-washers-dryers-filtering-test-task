@@ -24,7 +24,6 @@ function App() {
       .then((response) => {
         setAllProducts(response.data);
         setAllDisplayedProducts(response.data);
-        console.log(response.data);
       })
       .catch((error) => {
         console.log("Failed: ", error);
@@ -39,9 +38,11 @@ function App() {
     const sortByPrice = allFilters.includes("Cena");
     const sortByCapacity = allFilters.includes("Pojemność");
 
+    //
+
     const functionFilters = allFilters.filter((filterCategory) =>
       filterCategories
-        .find((fc) => fc.category === "functions")
+        .find((func) => func.category === "functions")
         ?.dropdownFilterType.includes(filterCategory)
     );
 

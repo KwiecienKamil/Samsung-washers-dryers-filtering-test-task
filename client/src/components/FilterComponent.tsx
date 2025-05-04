@@ -17,6 +17,7 @@ const FilterComponent = ({
   const handleToggleMenu = () => {
     setToggleDropdownMenu(!toggleDropdownMenu);
   };
+
   return (
     <div className="filter-component">
       <h2>{title}</h2>
