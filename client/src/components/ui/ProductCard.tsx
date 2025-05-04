@@ -1,8 +1,5 @@
 import { FC } from "react";
-import {
-  ProductCardProps,
-  ProductInfoTextDisplayProps,
-} from "../../types/FilterCategory";
+import {ProductCardProps} from "../../types/FilterCategory";
 import ProductInfoText from "./ProductInfoText";
 import PriceDisplay from "./PriceDisplay";
 import EnergyClassComponent from "./EnergyClassComponent";

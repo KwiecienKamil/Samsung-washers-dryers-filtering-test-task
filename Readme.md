@@ -34,5 +34,5 @@ npm run dev
 I believe for this task the optimal solution was not to complicate things. I hope I wrote clean functions and variables.
 
 # How I would scale this
-If the task would need the global state - I would use => `useContext` or `Redux`. For easier setup I picked `Node.js` as a backend, this time without database connection. Next for larger data of products I would use `pagination` concept for better app performance.
+If the task would need the global state - I would use => `useContext` or `Redux`. For easier setup I picked `Node.js` as a backend in the future I would connect database. Next for larger data of products I would use `pagination` concept for better app performance.
 
