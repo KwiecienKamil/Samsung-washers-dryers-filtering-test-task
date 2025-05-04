@@ -162,6 +162,6 @@ app.get("/getProducts", (req, res) => {
   ]);
 });
 
-app.listen("https://samsung-washers-dryers-filtering-test-task-1xyepmuqj.vercel.app/", () => {
-  
+app.listen(8081, () => {
+  console.log("listening");
 });
