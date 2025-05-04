@@ -7,6 +7,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use("/images", express.static("public/images"));
 
+
 app.get("/getProducts", (req, res) => {
   return res.json([
     {
@@ -161,6 +162,6 @@ app.get("/getProducts", (req, res) => {
   ]);
 });
 
-app.listen(8081, () => {
-  console.log("listening");
+app.listen("https://samsung-washers-dryers-filtering-test-task-1xyepmuqj.vercel.app/", () => {
+  
 });
