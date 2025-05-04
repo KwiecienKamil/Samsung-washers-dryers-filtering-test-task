@@ -38,36 +38,35 @@ function App() {
     const sortByPrice = allFilters.includes("Cena");
     const sortByCapacity = allFilters.includes("Pojemność");
 
-    //
 
     const functionFilters = allFilters.filter((filterCategory) =>
       filterCategories
-        .find((func) => func.category === "functions")
-        ?.dropdownFilterType.includes(filterCategory)
+        .find((functionCategory) => functionCategory.category === "functions")?.dropdownFilterType.includes(filterCategory)
     );
 
     const energyClassFilters = allFilters.filter((filterCategory) =>
       filterCategories
-        .find((fc) => fc.category === "energy")
-        ?.dropdownFilterType.includes(filterCategory)
+        .find((energyCategory) => energyCategory.category === "energy")?.dropdownFilterType.includes(filterCategory)
     );
 
     const capacityFilters = allFilters.filter((filterCategory) =>
       filterCategories
-        .find((fc) => fc.category === "capacity")
-        ?.dropdownFilterType.includes(filterCategory)
+        .find((capacityCategory) => capacityCategory.category === "capacity")?.dropdownFilterType.includes(filterCategory)
     );
 
     let filtered = allProducts.filter((product) => {
-      const matchesFunctions = functionFilters.every((func) =>
-        product.functions.includes(func)
+      
+      const matchesFunctions = functionFilters.every((matchingFunction) =>
+        product.functions.includes(matchingFunction)
       );
+      
       const matchesEnergy =
-        energyClassFilters.length === 0 ||
-        energyClassFilters.includes(product.energyClass);
+        energyClassFilters.length === 0 || energyClassFilters.includes(product.energyClass);
+      
       const matchesCapacity =
-        capacityFilters.length === 0 ||
-        capacityFilters.includes(product.capacity);
+        capacityFilters.length === 0 || capacityFilters.includes(product.capacity);
+
+
       return matchesFunctions && matchesEnergy && matchesCapacity;
     });
 
@@ -90,22 +89,21 @@ function App() {
     let updatedFilters: string[];
 
     if (filterType === "Wszystkie" && categoryKey) {
+      
       const category = filterCategories.find(
-        (fc) => fc.category === categoryKey
+        (filterCategoriesCategory) => filterCategoriesCategory.category === categoryKey
       );
       const optionsToRemove =
-        category?.dropdownFilterType.filter((f) => f !== "Wszystkie") || [];
-      updatedFilters = activeFilters.filter(
-        (f) => !optionsToRemove.includes(f)
+        category?.dropdownFilterType.filter((type) => type !== "Wszystkie") || [];
+        updatedFilters = activeFilters.filter((filter) => !optionsToRemove.includes(filter)
       );
     } else {
       if (activeFilters.includes(filterType)) {
-        updatedFilters = activeFilters.filter((f) => f !== filterType);
+        updatedFilters = activeFilters.filter((filter) => filter !== filterType);
       } else {
         updatedFilters = [...activeFilters, filterType];
       }
     }
-
     setActiveFilters(updatedFilters);
   };
 

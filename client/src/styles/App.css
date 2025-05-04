@@ -5,6 +5,7 @@
   --lightaccent: #007aff;
   --dark: #1c1c1c;
   --grayish: #767676;
+  --darkgrayish: #555555;
   --hover: #e9e5e5;
   font-family: "SamsungOne", sans-serif;
 }
@@ -55,12 +56,14 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 1rem;
   flex-wrap: wrap;
   font-size: 0.9rem;
 }
 .filter-component {
   flex: 1;
+  min-width: 15rem;
 }
 
 .dropdown-component {
@@ -92,6 +95,7 @@ main {
   font-size: 0.9rem;
   margin-top: 0.5rem;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  z-index: 10;
 }
 .dropdown-content p {
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
@@ -198,7 +202,7 @@ main {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #555555;
+  color: var(--darkgrayish);
   margin: 1rem 0 1rem 0;
 }
 .energy-class-component img {
@@ -238,4 +242,29 @@ main {
 .selected-product-button {
   background: var(--dark);
   color: var(--primary);
+}
+
+@media screen and (max-width: 1200px) {
+  #displayed-products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-card img {
+    max-width: 200px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .product-card h3 {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  #displayed-products {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    width: 80%;
+  }
 }
